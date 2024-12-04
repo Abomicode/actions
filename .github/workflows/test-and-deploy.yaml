@@ -1,0 +1,33 @@
+name: 
+  test-application
+on:
+  [push, workflow_dispatch]
+jobs:
+  test-app:
+    runs-on: 
+      ubuntu-latest
+    steps:
+      - name: Pull Codebase
+        uses: actions/checkout@v4
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21
+      - name: Install Dependencies
+        run: npm ci
+      - name: Test Codebase
+        run: npm test
+  deploy-app:
+    runs-on: 
+      ubuntu-latest
+    steps:
+      - name: Pull Codebase
+        uses: actions/checkout@v4
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21
+      - name: Install Dependencies
+        run: npm ci
+      - name: Deploy Codebase
+        run: echo "Build deployed!!!"
