@@ -1,7 +1,25 @@
 name: 
   test-and-deploy-application
 on:
-  [push, workflow_dispatch]
+  push:
+    branches:
+      - 'main'
+    paths-ignore:
+      - '.github/workflows'
+  workflow_dispatch:
+  issues:
+    types:
+      - opened
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - edited
+    branches: 
+      - 'main'
+    paths-ignore:
+      - '.github/workflows'
 jobs:
   test-app:
     runs-on: 
