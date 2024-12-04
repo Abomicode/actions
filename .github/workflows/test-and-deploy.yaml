@@ -26,6 +26,7 @@ jobs:
         run: 
           npm test
   deploy-app:
+# needs keyword is required to run 2 jobs sequentially. By default the jobs run in parallel.
     needs: 
       [test-app]
     runs-on: 
