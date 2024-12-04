@@ -1,5 +1,5 @@
 name: 
-  test-application
+  test-and-deploy-application
 on:
   [push, workflow_dispatch]
 jobs:
