@@ -5,7 +5,7 @@ on:
 jobs:
   test-app:
     runs-on: 
-      ubuntu-latest
+      ubuntu-24.04
     steps:
       - name: Pull Codebase
         uses: actions/checkout@v4
