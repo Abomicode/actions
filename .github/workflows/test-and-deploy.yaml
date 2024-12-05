@@ -17,8 +17,8 @@ on:
       - edited
     branches: 
       - 'main'
-    paths-ignore:
-      - '.github/workflows'
+#    paths-ignore:
+#      - '.github/workflows'
   workflow_dispatch:    
 jobs:
   test-app:
@@ -34,7 +34,7 @@ jobs:
       - uses: 
           actions/setup-node@v4
       - uses: 
-          Abomycode/code4fun@v1
+          'Abomycode/code4fun@v1'
         with:
           node-version: '20.x'
       - name: 
